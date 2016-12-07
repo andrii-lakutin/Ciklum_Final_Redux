@@ -14,3 +14,10 @@ export function seatPopupVisibility(bool) {
     };
 }
  
+export function seatTitleEditing(bool) {
+    return {
+        type: popupTypes.TITLE_EDITING,
+        seatTitleEditing: bool
+    };
+}
+ 

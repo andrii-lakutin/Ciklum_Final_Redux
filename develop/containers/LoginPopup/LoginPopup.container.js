@@ -7,6 +7,8 @@ import { login } from '../../actions/api.actions';
 
 import './LoginPopup.container.scss';
 
+import Draggable from 'react-draggable';
+
 class LoginPopup extends Component {
 
     login(){
@@ -23,23 +25,25 @@ class LoginPopup extends Component {
 
     render() {
         const { loginPopupVisibility } = this.props;
- 
+    //id's are temporary
         if (this.props.store.loginPopupVisibility && !this.props.store.login) {
             return (
-                <section className="PopUp">
-                    <div className="inputs">
-                        <div className="row">
-                            <p>Login</p>
-                            <input type="text" ref='login'/>
+                <Draggable bounds='body'>
+                    <section className="PopUp">
+                        <div className="inputs" id="test">
+                            <div className="row" id="test2">
+                                <p>Login</p>
+                                <input type="text" ref='login'/>
+                            </div>
+                            <div className="row" id="test3">
+                                <p>Password</p>
+                                <input type="password" ref='pass'/>
+                            </div>
+                            <i aria-hidden="true" className="fa fa-times cross" onClick={this.close.bind(this)}></i>
                         </div>
-                        <div className="row">
-                            <p>Password</p>
-                            <input type="password" ref='pass'/>
-                        </div>
-                        <i aria-hidden="true" className="fa fa-times cross" onClick={this.close.bind(this)}></i>
-                    </div>
-                    <a className="popUpConfirm" onClick={this.login.bind(this)}>Login</a>  
-                </section>
+                        <a className="popUpConfirm" onClick={this.login.bind(this)}>Login</a>  
+                    </section>
+                </Draggable>
             );
         } else return null;
     }

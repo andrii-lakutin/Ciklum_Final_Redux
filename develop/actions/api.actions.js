@@ -99,7 +99,13 @@ export function search(url) {
                     return response;
                 }
             })
-            .then((response) => response.json())
+            .then((response) => {
+                if(response){
+                    return response.json();
+                } else {
+                    return [];
+                }
+            })
             .then((json) => dispatch(searchSuccess(json)))
     };
 }

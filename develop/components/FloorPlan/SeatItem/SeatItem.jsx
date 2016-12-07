@@ -3,6 +3,8 @@ import classNames from 'classnames';
 
 import './SeatItem.scss';
 
+import Draggable from 'react-draggable';
+
 class SeatItem extends Component {
 
     chooseCurrentSeat(){
@@ -23,11 +25,15 @@ class SeatItem extends Component {
         }); 
 
         return (
-            <div className="seatItem" style={style} onClick={this.chooseCurrentSeat.bind(this)}>
-                <i aria-hidden="true" className="fa fa-caret-down"></i>
-                <div className={classes}></div>
-                <p>{data.Title}</p>
-            </div>
+            <Draggable bounds='parent'>
+
+                <div className="seatItem" style={style} onClick={this.chooseCurrentSeat.bind(this)}>
+                    <i aria-hidden="true" className="fa fa-caret-down"></i>
+                    <div className={classes}></div>
+                    <p>{data.Title}</p>
+                </div>
+
+            </Draggable>
         );
     }
 }

@@ -18,7 +18,7 @@ class Header extends Component {
 
         return (
             <section className="header">
-                <Search handleSearch={handleSearch} store = {this.props.store}/>
+                <Search handleSearch={handleSearch} store={this.props.store}/>
                 <Checkbox/>
                 <Login loginPopupVisibility = {loginPopupVisibility} 
                 	   logout = {logout} 

@@ -13,7 +13,7 @@ class Search extends Component {
 
         return (
             <div className="search">
-                <input type="text" onChange={this.search.bind(this)}/>
+                <input type="text" onChange={this.search.bind(this)} ref="search"/>
                 <i aria-hidden="true" className="fa fa-search"></i>
                 <ul className="results">
                 	{this.props.store.search.map((item) => (
