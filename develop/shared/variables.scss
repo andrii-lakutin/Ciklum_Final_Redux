@@ -1,0 +1,23 @@
+$header-bg-color : rgb(124,154,195);
+$search-placeholder :  #757575;
+$fontcolor: white;
+$bg-inside-popup : rgb(219,219,219);
+
+$seat-item: rgba(67,97,160,1);
+
+$popUp-icon-bg: #F4F3F6;
+
+@mixin inputs() {
+	border: 0;
+	&focus{
+		outline: none;
+	}
+	&placeholder{ 
+		color: $search-placeholder;
+		text-indent: 5px;
+		transition: text-indent 500ms cubic-bezier(.87,-.41,.19,1.441);
+	}
+	&focusplaceholder{
+		text-indent: -300px;
+	}
+}

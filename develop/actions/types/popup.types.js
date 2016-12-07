@@ -1,0 +1,4 @@
+export default {
+    SHOW_LOGIN_POPUP: 'SHOW_LOGIN_POPUP',
+    SHOW_SEAT_POPUP: 'SHOW_SEAT_POPUP'
+};
